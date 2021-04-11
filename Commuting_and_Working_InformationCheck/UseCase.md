@@ -1,10 +1,56 @@
 # Use Cases from System Requirements
+|Actor|Actor's Goal|Use Case Name|
+|:----------:|:-------------:|:------:|
+| 관리자 | 직원이 전송한 사진과 GPS마커를 확인한다.|직원별 기록 확인 (UC-3)|
+| 관리자 | 각 직원에 대한 정확한 급여를 확인한다.|직원별 급여 계산 (UC-2)|
+<br><br>
 
-1. 관리자 : 직원이 전송한 사진과 gps마커를 확인한다.
-2. 관리자 : 각 직원에 대한 정확한 급여를 확인한다.
+# Traceability Matrix
 
+|Req't |PW|UC1|UC2|UC3|
+|:----------|:-------------:|:--:|:--:|:--:|
+|FR1|1|X|X|X|
+|FR2|1|X|X|X|
+|FR3|2|X|||
+|FR4|3|X|||
+|FR5|5|||X|
+|FR6|5||X||
+|FR7|5|||X|
+|Max PW||3|5|5|
+|Total PW||7|7|12|
+<br><br>
 # Use Cases
 
-UC1: 직원식별번호 검증, 확인
-UC2: 직원 급여 계산
-UC3: 직원별 남긴 기록(gps,출퇴근 사진) 확인
+|Use Case UC-1 |직원식별번호 검증, 확인|
+|:----------|:-------------|
+| Related Requirements | FR1, FR2, FR3, FR4|
+| Initiating Actor |관리자|
+| Actor's Goal |직원식별번호 관리를 위한 검증, 확인절차|
+| Participating Actors | |
+| Preconditions | 직원식별번호가 시스템에 미리 저장 되어 있다.|
+| Postconditions | 입력한 식별번호가 맞으면 선택했던 메뉴의<br> 다음화면으로 진행할 수 있다. |
+| Flow of Events for Main Success Scenario <br><br><br>| → &nbsp;&nbsp;1. 관리자가 이용하고자 하는 메뉴를 선택한다. <br>← &nbsp;&nbsp;2. 식별번호를 입력할 칸을 표시한다.<br>← &nbsp;&nbsp;3. 입력한 식별번호가 맞으면 다음화면으로 진행 <br><br><br> |
+
+
+|Use Case UC-2 |직원별 급여 계산|
+|:----------|:-------------|
+| Related Requirements | FR1, FR2, FR6|
+| Initiating Actor |관리자|
+| Actor's Goal |전송받은 GPS마커와 사진을 통해 <br> 명확하게 급여를 계산한다.|
+| Participating Actors | |
+| Preconditions |전송받은 GPS마커와 사진이 시간 순으로<br> 시스템에 저장 되어있다.|
+| Postconditions |GPS마커와 사진의 시간기록을 보고 급여를 입력하면<br>총 급여가 합산되어 저장된다.|
+| Flow of Events for Main Success Scenario <br><br><br><br>| → &nbsp;&nbsp;1.  <U>직원식별번호 검증, 확인 (UC-1) 포함</U><br>← &nbsp;&nbsp;2. 시스템에 저장된 GPS마커와 사진의 시간기록을 표시 <br>→ &nbsp;&nbsp;3. 시간기록을 확인하고 관리자가 급여 입력<br>→ &nbsp;&nbsp;4. 시스템이 시간과 급여를 계산식에 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;도출하여 시스템에 저장<br><br><br> |
+
+
+|Use Case UC-3 |직원별 기록 (GPS, 출퇴근 사진) 확인|
+|:----------|:-------------|
+| Related Requirements | FR1, FR2, FR5, FR7|
+| Initiating Actor |관리자|
+| Actor's Goal |직원이 전송한 GPS마커와 출퇴근 사진기록을 확인|
+| Participating Actors | |
+| Preconditions |직원이 전송한 GPS마커와 출퇴근 사진기록이<br>시스템에 저장되어 있다.|
+| Postconditions |입력한 식별번호가 맞으면 선택했던 메뉴의<br>다음화면으로 진행할 수 있다.|
+| Flow of Events for Main Success Scenario <br><br><br><br>| → &nbsp;&nbsp;1.  <U>직원식별번호 검증, 확인 (UC-1) 포함</U><br>← &nbsp;&nbsp;2. 저장된 GPS마커는 지도에 동선으로 표시하고<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사진을 함께 표시한다.<br> <br><br><br> |
+
+
