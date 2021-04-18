@@ -82,7 +82,7 @@
 |Participating Actors|	Database, Server|
 |Preconditions       | - 관리자 계정으로 로그인 되어있어야 한다. <br>- 수정을 원하는 직원 정보가 Database에 저장되어 있다.  <br>- 관리자로부터 수정할 정보를 입력 받는다.
 |Postconditions      | - 정보 입력을 완료하면 해당 직원의 정보가 수정된다. <br>- 비밀번호가 수정되었을 시 서버가 해당 직원에게 바뀐 비밀번호를 전송한다.
-|Flow of Events for Main Success Scenario|1. 관리자가 직원을 선택한다. <br>2. 관리자가 수정 버튼을 누른다. <br>3. 수정 정보를 입력할 창을 표시한다. <br>4. 관리자가 수정할 정보를 입력한다. <br>5. 해당 직원의 정보가 수정된다.
+|Flow of Events for Main Success Scenario|→ 1. 관리자가 직원을 선택한다. <br>→ 2. 관리자가 수정 버튼을 누른다. <br>← 3. 수정 정보를 입력할 창을 표시한다. <br>→ 4. 관리자가 수정할 정보를 입력한다. <br>← 5. 해당 직원의 정보가 수정된다.
 
 
 |Use Case UC-4.      |직원 검색    |
@@ -93,7 +93,7 @@
 |Participating Actors|	Database |
 |Preconditions       |- 관리자 계정으로 로그인 되어있어야 한다. <br>- 직원 정보가 Database에 저장되어 있다.  <br>- 관리자로부터 검색할 정보를 입력 받는다.|
 |Postconditions      | - 관리자가 정보를 입력하고 검색하면, 해당 정보에 해당하는 직원들을 볼 수 있다.
-|Flow of Events for Main Success Scenario| 1. 관리자가 검색할 정보를 입력한다. <br>2. 관리자가 검색 버튼을 누른다. <br>3. 해당 정보에 해당하는 직원들이 표시된다
+|Flow of Events for Main Success Scenario|→ 1. 관리자가 검색할 정보를 입력한다. <br>→ 2. 관리자가 검색 버튼을 누른다. <br>← 3. 해당 정보에 해당하는 직원들이 표시된다
 
 
 |Use Case UC-5       |	로그인 (sub-use case) |
