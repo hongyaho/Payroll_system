@@ -84,7 +84,20 @@
 | UC1      | 7  | X           | X        | X           | X              | X                   | X              | X            | X             |
 | UC2      | 12 | X           |          |             |                |                     |                |              |               |
 
-|     Use Case     |  PW  |   DateInfo  | Calendar | ControllerUC2 | Search Request | Database Connection | Interface Page |   PageMaker  |               |
-|:--------:|:--:|:-----------:|:--------:|:-----------:|:--------------:|:-------------------:|:--------------:|:------------:|:-------------:|
-| UC1      | 7  |             |          |             |                |                     |                |              |               |
-| UC2      | 12 | X           | X        | X           | X              | X                   | X              | X            |               |
+|     Use Case     |  PW  |   DateInfo  | Calendar | ControllerUC2 | Search Request | Database Connection | Interface Page |   PageMaker  |
+|:--------:|:--:|:-----------:|:--------:|:-----------:|:--------------:|:-------------------:|:--------------:|:------------:|
+| UC1      | 7  |             |          |             |                |                     |                |              |
+| UC2      | 12 | X           | X        | X           | X              | X                   | X              | X            |
+
+<br><br>
+## Contracts
+---
+| Operation |     직원식별번호 검증, 확인    |
+|:---------:|:------------------------------:|
+| Preconditions       | 입력한 직원식별번호가 유효한 번호인지 알 수 없다.                              |
+| Postconditions       | 입력한 번호가 유효하다면 다음 화면으로 진행할 수 있고, 아니라면 진행할 수 없다.                 |
+
+| Operation | 직원별 기록 (GPS, 출퇴근 사진) |
+|:---------:|:------------------------------:|
+| Preconditions       | None                              |
+| Postconditions       | UC1을 통해 입력한 직원 식별번호가 유효한지 검증하고, <br>그렇다면 선택한 날짜의 출퇴근 기록(사진, 위치)을 보여준다.                              |
