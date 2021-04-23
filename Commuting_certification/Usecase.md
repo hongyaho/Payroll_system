@@ -1,4 +1,4 @@
-### Usecase
+# Usecase
 
 Actor | Actor’s   Goal | Use   Case Name
 -- | -- | --
@@ -11,7 +11,7 @@ Mobile | 촬영된 사진과 함께 촬영한 순간의 위치 좌표를 저장�
 Online Server | 사진과 위치 좌표를 시스템으로 업로드한다 | UC-2, UC-3
 
 
-###Traceability Matrix
+# Traceability Matrix
 
 Req't | PW | UC1 | UC2 | UC3 | UC4
 -- | -- | -- | -- | -- | --
@@ -28,7 +28,7 @@ Max PW |  | 1 | 5 | 4 | 5 
 Total PW |  | 1 | 20 | 7 | 5 
 
 
-###Detailed Use Cases
+# Detailed Use Cases
 
 Use Case UC-1 | 로그인
 -- | --
