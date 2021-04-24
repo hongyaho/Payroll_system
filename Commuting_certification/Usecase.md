@@ -24,6 +24,7 @@ Req't | PW | UC1 | UC2 | UC3 | UC4
 7 | 1 |  |  | X |  
 8 | 4 |  |  | X |  
 9 | 2 |  | X | X |  
+10 | 2 |  | X | X |  
 Max PW |  | 1 | 5 | 4 | 5 
 Total PW |  | 1 | 20 | 7 | 5 
 
@@ -44,7 +45,7 @@ Flow of Events   for Extensions (Alternate Scenarios) | 2a. 입력받은 아이�
 
 Use Case UC-2 | 출근 인증
 -- | --
-Related Requirements | FR2, FR3, FR4,   FR5, FR6
+Related Requirements | FR2, FR3, FR4,  FR5
 Initiating   Actor | Employee
 Actor’s Goal | 로그인하여 출퇴근 인증을 한다.
 Participating   Actors | Mobile Camera, Mobile GPS, Mobile Server
@@ -56,11 +57,11 @@ Flow of Events   for Extensions (Alternate Scenarios) | 3a. 사진을 잘못 촬
  
  Use Case UC-3 | 퇴근 인증
 -- | --
-Related Requirements | FR7, FR8, FR9
+Related Requirements | FR3, FR4, FR6, FR9, FR10
 Initiating   Actor | Employee
 Actor’s Goal | 퇴근을 인증하고 로그아웃   한다.
 Participating   Actors | Mobile Camera, Mobile GPS, Mobile Server
-Preconditions | - 로그인이 되어 있어야 한다
+Preconditions | - 로그인이 되어 있어야 한다. - 출근인증이 되어 있어야 한다.
 Postconditions | - 퇴근을 인증한다.   - 로그아웃을 완료한다.
 Flow of Events   for Main Success Scenario | → 1. 로그아웃 버튼을 클릭한다.   ← 2. 카메라를 킨다.   → 3. 자신의 사진을 촬영한다.   ← 4. 사진 저장 버튼과 재촬영 버튼을 표시한다.   → 5. 사진 저장 버튼을 선택한다.   ← 6. 사진과 사진 제출 버튼이 있는 화면을 표시한다.   → 7. 사진 제출 버튼을 선택해 사진을 제출하면 사진과 함께 위치 정보가 전송된다.   ← 8. 해당 직원이 퇴근을 했다는 정보와, 마지막 위치 정보를 저장한다.   ← 9. 로그인 화면을 표시한다.
 Flow of Events   for Extensions (Alternate Scenarios) | 4a. 사진을 잘못 촬영했을 경우:   → 1. 화면의 재촬영 버튼을 선택한다   ← 2. 위의 2번째 단계와 같다.   7a. 위치 정보가 전달되지 않을 경우:   ← 1. 온라인 상태인지, 위치 권한이 켜져 있는지 확인해 달라는 알림을 표시한다.   → 위의 6번째 단계와 같다.
@@ -68,7 +69,7 @@ Flow of Events   for Extensions (Alternate Scenarios) | 4a. 사진을 잘못 촬
 
 Use Case UC-4 | 실시간 위치 전송
 -- | --
-Related Requirements | FR6
+Related Requirements | FR7, FR8
 Initiating Actor |  Employee
 Actor’s Goal | 5분마다 사용자의 현재 위치를 전송한다.
 Participating Actors | Server, Mobile GPS
