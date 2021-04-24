@@ -9,12 +9,12 @@
 
 | Responsibility Description                                         | Type | Concept Name  |
 | :----------------------------------------------------------------- | :--- | :------------ |
-| 변경된 직원 정보를 내보내고 외부 정보를 받는 동작을 조절한다. | D    | Controller    |
-| Database 간의 정보를 연결한다.                                        | D    | Database connection      |
-| 추가할 직원의 정보를 입력받는다.                                | K    |Data input   |
-| 추가된 직원의 정보를 database에 추가한다.                               | D    | Data insert   |
-| 전체 직원의 database를 보여준다.                                  | D    |Displaylist |
-| 추가할 직원의 정보를 입력할 창을 띄운다.                       | D    | Displaylist |
+| 변경된 직원 정보를 내보내고 외부 정보를 받는 동작을 조절한다.           |  D  | Controller    |
+| Database 간의 정보를 연결한다.                                       |  D  | Database connection      |
+| 추가할 직원의 정보를 입력받는다.                                      |  K   |Data input   |
+| 추가된 직원의 정보를 database에 추가한다.                             |  D   | Data insert   |
+| 전체 직원의 database를 보여준다.                                     |   D  |Displaylist |
+| 추가할 직원의 정보를 입력할 창을 띄운다.                              |   D   | Displaylist |
 
 
 
