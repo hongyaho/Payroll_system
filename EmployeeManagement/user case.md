@@ -59,7 +59,7 @@
 |Participating Actors|	Database, Server|
 |Preconditions       |	- 관리자 계정으로 로그인 되어있어야 한다.|
 |Postconditions      |	- 입력한 직원 정보가 데이터베이스에 추가된다. <br>- 직원 리스트에 해당 직원 정보가 찾을 수 있다.|
-|Flow of Events for Main Success Scenario|→ 1. 추가 버튼을 누른다. <br>← 2. 상세 정보(이름, id, 비밀번호, 전화번호, 급여옵션) 입력 창을 화면에 표시한다. <br>→ 3. 관리자는 직원 정보(이름, id, 비밀번호, 전화번호, 급여옵션)을 입력한다. <br>← 4. 시스템은 입력 받은 정보를 데이터베이스에 추가한다.|
+|Flow of Events for Main Success Scenario|→ 1. 추가 버튼을 누른다. <br>← 2. 상세 정보(이름, id, 비밀번호, 전화번호, 급여옵션) 입력 창을 화면에 표시한다. <br>→ 3. 관리자는 직원 정보(이름, id, 비밀번호, 전화번호, 급여옵션)을 입력한다. <br>← 4. 시스템은 입력 받은 정보를 데이터베이스에 추가한다. <br>← 5. 시스템은 서버를 통해 설정된 ID와 비밀번호를 직원에게 전송한다. <br>← 6. 저장된 직원 정보를 화면에 표시한다.|
 |Flow of Events for Extensions (Alternate Scenarios)|3a. 이름, id, 비밀번호, 전화번호, 급여옵션 중 입력 받지 않은 정보가 있을 경우 <br>← 1. 시스템은 이를 관리자에게 알린다. <br>→ 2. 관리자는 모든 정보를 입력한다. <br>← 3. 위 4번째 단계와 같다.|
 
 
@@ -83,7 +83,7 @@
 |Participating Actors|	Database, Server|
 |Preconditions       | - 관리자 계정으로 로그인 되어있어야 한다. <br>- 수정을 원하는 직원 정보가 Database에 저장되어 있다.  <br>- 관리자로부터 수정할 정보를 입력 받는다.
 |Postconditions      | - 정보 입력을 완료하면 해당 직원의 정보가 수정된다. <br>- 비밀번호가 수정되었을 시 서버가 해당 직원에게 바뀐 비밀번호를 전송한다.
-|Flow of Events for Main Success Scenario|→ 1. 관리자가 직원을 선택한다. <br>→ 2. 관리자가 수정 버튼을 누른다. <br>← 3. 수정 정보를 입력할 창을 표시한다. <br>→ 4. 관리자가 수정할 정보를 입력한다. <br>← 5. 해당 직원의 정보가 수정된다.
+|Flow of Events for Main Success Scenario|→ 1. 관리자가 직원을 선택한다. <br>→ 2. 관리자가 수정 버튼을 누른다. <br>← 3. 수정 정보를 입력할 창을 표시한다. <br>→ 4. 관리자가 수정할 정보를 입력한다. <br>← 5. 해당 직원의 정보가 수정된다. <br>← 6. 비밀번호가 수정되었을 경우 시스템은 서버를 통해 직원에게 변경된 비밀번호를 전송한다.
 
 
 |Use Case UC-4.      |직원 검색    |
