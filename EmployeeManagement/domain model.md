@@ -43,7 +43,7 @@
 | 	              | 직원에게 전송할 정보 |	직원에게 전송할 변경된 정보를 담고 있다. <br>( 추가 – ID, 비밀번호 / 수정 – 비밀번호 )
 
 
-![image](https://user-images.githubusercontent.com/70556633/115994382-b36f4200-a611-11eb-83c0-e73480d4a516.png)
+![1,3](https://user-images.githubusercontent.com/76227569/115994727-2331fc80-a613-11eb-82a8-6328c75bb3b6.png)
 
 
 UC 2, 4 (삭제, 검색)
@@ -83,7 +83,7 @@ UC 2, 4 (삭제, 검색)
 |Page maker|	수행할 동작	| 수행할 동작에 따라 인터페이스 페이지가 달라지므로 명령을 매개변수로 받아야 한다. <br>(삭제 – confirm message / 검색 – 검색한 직원 상세 정보 )
 
 
-![image](https://user-images.githubusercontent.com/70556633/115994392-bb2ee680-a611-11eb-9ab0-f10ae3f6d99c.png)
+![2,4](https://user-images.githubusercontent.com/76227569/115994741-2e852800-a613-11eb-9437-93fe23fe3b0e.png)
 
 
 UC 5 로그인
@@ -124,7 +124,7 @@ UC 5 로그인
 |verifier	| input data	| 비교를 위해 입력 받은 로그인 정보를 매개변수로 갖는다.
 
 
-![image](https://user-images.githubusercontent.com/70556633/115994397-bf5b0400-a611-11eb-9f0b-b962c1c81a45.png)
+![5](https://user-images.githubusercontent.com/76227569/115994750-3644cc80-a613-11eb-8279-0e3c40a1caf8.png)
 
 
 UC 6 급여 계산
@@ -159,5 +159,5 @@ UC 6 급여 계산
 |calculate |	직원 정보	| 급여 계산을 위해 필요한 직원 정보를 가지고 있어야 한다. (근무시간, 급여 옵션)
 
 
-![image](https://user-images.githubusercontent.com/70556633/115994403-c41fb800-a611-11eb-8575-0590f752187a.png)
+![6](https://user-images.githubusercontent.com/76227569/115994761-3d6bda80-a613-11eb-80ea-1069d53c315d.png)
 
