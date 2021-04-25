@@ -92,5 +92,7 @@ Controller <-> Viewer | 알림을 띄워준다. | Provide data
 
 Concept | attributes | Attribute   description
 -- | -- | --
-Location Updater | 위치 정보 | 사용자의 위치 좌표
-Interface Page | 알림 | 위치 정보가 전달되지 않을 경우 알려주는 알림창
+GpsInfo | 위치 좌표 | 사용자의 위치 좌표
+Viewer | 현재 위치 | 제공받은 최신위치 (5분간격으로 업데이트)
+TimeOperator | 타이머 | 5분의 시간을 카운트하고 카운트가 끝나면 요청전송 
+
