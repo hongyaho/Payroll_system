@@ -18,7 +18,7 @@
 [ USE CASE Diagram ]
 ---------------------
 
-![image](https://user-images.githubusercontent.com/70556633/115085779-1263f580-9f46-11eb-8fc8-c738598912a2.jpeg)
+![image](https://user-images.githubusercontent.com/70556633/115992999-8ae44980-a60b-11eb-9edb-b91cd5ac1903.png)
 
 <br>
 
