@@ -25,19 +25,14 @@ h1{
 }
 
 #historyView{
-    margin-top: 8%;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 400px 100px 400px;
+    grid-template-rows: 50px 400px;
+    justify-content: center;
 }
 
-.commutePic{
-    margin-left: 20%;
-}
-
-.picLabel{
-    margin-left: 30%;
-    margin-right:30%;
-}
-
-.lables{
-    margin-bottom: 20px;
+.label{
     font-size: 30px;
+    text-align: center;
 }
