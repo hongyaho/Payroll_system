@@ -13,10 +13,11 @@
         alert('메인 메뉴로 이동하게 됩니다.');">
             <img src="./img/back.png" height="60px" width="60px"></button>
     </div>
-    <div id="label">
-        <div class='text'>Date: <input type="date" name="requestDate"></div>
-        <div class='text'>ID : <input type="text" name="idNum"></div>
+    <div class="label">
+        <div>Date: <input type="date" id='calendar' name='dateInfo'></div>
+        <div id='inputID'>ID : <input type='text' name='idNum'></div>
     </div>
+    <script>chooseDate(this)</script>
     <div style="text-align: center;">
         <button type="submit" id="okButton" onclick="
         alert('UC1에서 유효한 식별번호임이 확인 되었을 시 이동');

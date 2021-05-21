@@ -15,8 +15,9 @@ h1{
     font-size: 25px;
 }
 
-#label{
+.label{
     text-align: center;
+    font-size: 30px;
 }
 
 #okButton{

@@ -28,11 +28,15 @@ h1{
     margin-top: 2%;
     display: grid;
     grid-template-columns: 400px 100px 400px;
-    grid-template-rows: 50px 400px;
+    grid-template-rows: 50px 400px 50px;
     justify-content: center;
 }
 
 .label{
     font-size: 30px;
     text-align: center;
+}
+
+#viewAllMarkers{
+    font-size: 20px;
 }
