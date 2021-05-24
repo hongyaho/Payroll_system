@@ -41,6 +41,14 @@ class TakeLocation: UIViewController, CLLocationManagerDelegate {
     @IBAction func clickNext(_ sender: UIButton) {
         
     }
+    
+    // gps 에러 발생시 얼럿창 표출
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let alert = UIAlertController(title: "Error", message: "Cannot get GPS", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 
     
 }
