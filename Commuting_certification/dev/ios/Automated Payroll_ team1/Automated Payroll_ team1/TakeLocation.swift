@@ -39,6 +39,9 @@ class TakeLocation: UIViewController, CLLocationManagerDelegate {
 
     }
     @IBAction func clickNext(_ sender: UIButton) {
+        guard let mainVC = self.storyboard?.instantiateViewController(identifier: "MainPage") as? MainPage else {return}
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = mainVC
         
     }
     
