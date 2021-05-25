@@ -2,10 +2,11 @@
 
 <head>
     <title>Check Location</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./main.css">
     <meta charset="utf-8">
+    <script src="main.js"></script>
+    <script src="./data.js"></script>
 </head>
-
 <body>
     <h1>Managing Staff System</h1>
     <div>
@@ -14,16 +15,14 @@
             <img src="./img/back.png" height="60px" width="60px"></button>
     </div>
     <div class="label">
-        <div>Date: <input type="date" id='calendar' name='dateInfo'></div>
-        <div id='inputID'>ID : <input type='text' name='idNum'></div>
+        <div>Date: <input type="date" id='calendar'></div>
+        <div>ID : <input type='text' id='inputID'></div>
     </div>
-    <script>chooseDate(this)</script>
     <div style="text-align: center;">
-        <button type="submit" id="okButton" onclick="
-        alert('UC1에서 유효한 식별번호임이 확인 되었을 시 이동');
-        location.href='showResult.html';">
+        <button type="button" id="okButton" onclick="goNextfromUC1()">
             <img src="./img/ok.png" height="80px" width="80px"></button>
     </div>
+    
 </body>
 
 </html>
