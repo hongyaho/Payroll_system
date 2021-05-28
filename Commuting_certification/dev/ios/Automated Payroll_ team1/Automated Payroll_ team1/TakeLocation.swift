@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class TakeLocation: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class TakeLocation: UIViewController, CLLocationManagerDelegate{
 
     var id = ""
     @IBOutlet var latLbl: UILabel!
@@ -41,7 +41,6 @@ class TakeLocation: UIViewController, CLLocationManagerDelegate, UIImagePickerCo
         
         idLBl.text = id
         
-
     }
     @IBAction func clickLogout(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
@@ -59,7 +58,7 @@ class TakeLocation: UIViewController, CLLocationManagerDelegate, UIImagePickerCo
         present(alert, animated: true, completion: nil)
     }
 
-
-    
 }
+
+
 
