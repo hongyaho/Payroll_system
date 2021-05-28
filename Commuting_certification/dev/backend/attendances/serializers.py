@@ -7,9 +7,12 @@ from .models import Attendance
 class ReadAttendanceSerializer(serializers.ModelSerializer):
     user = UserSerializer()
 
+    # start_img = serializers.ImageField(use_url=True)
+    # end_img = serializers.ImageField(use_url=True)
+
     class Meta:
         model = Attendance
-        fields = ("user", "date", "start_time", "end_time", "start_gps", "end_gps",)
+        fields = ("user", "date", "start_time", "end_time", "start_gps", "end_gps")
 
 
 class WriteAttendanceSerializer(serializers.Serializer):
