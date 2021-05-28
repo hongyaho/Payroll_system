@@ -1,10 +1,12 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from . import models
+
+
 # Register your models here.
 
 @admin.register(models.User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-        "employee_id"
+class UserAdmin(UserAdmin):
+    fieldsets = UserAdmin.fieldsets + (
+        ("Custom Profile", {"fields": ("tel",)},),
     )

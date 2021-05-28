@@ -1,8 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
 
-class User(models.Model):
-    name = models.CharField(max_length=140, blank=True)
-    employee_id = models.IntegerField()
+class User(AbstractUser):
+    tel = models.CharField(max_length=255, blank=True, verbose_name="전화번호")

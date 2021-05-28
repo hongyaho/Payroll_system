@@ -13,9 +13,11 @@ class ReadAttendanceSerializer(serializers.ModelSerializer):
 
 
 class WriteAttendanceSerializer(serializers.Serializer):
+    date = serializers.DateField(default="00:00:00")
+    start_time = serializers.TimeField(default="00:00:00")
     end_time = serializers.TimeField(default="00:00:00")
-    start_gps = serializers.CharField(max_length=255)
-    end_gps = serializers.CharField(max_length=255)
+    start_gps = serializers.CharField(max_length=255, default="")
+    end_gps = serializers.CharField(max_length=255, default="")
 
     def create(self, validated_data):
         print(validated_data)
