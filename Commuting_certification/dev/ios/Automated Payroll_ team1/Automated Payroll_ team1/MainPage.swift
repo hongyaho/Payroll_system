@@ -14,9 +14,12 @@ class MainPage: UIViewController {
 
     }
     @IBAction func clickLogoutBtn(_ sender: UIButton) {
-        guard let loginVC = self.storyboard?.instantiateViewController(identifier: "Login") as? Login else {return}
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = loginVC
+        self.navigationController?.popToRootViewController(animated: true)
+//        guard let loginVC = self.storyboard?.instantiateViewController(identifier: "Login") as? Login else {return}
+//        self.view.window?.rootViewController = loginVC
+//        self.view.window?.makeKeyAndVisible()
+//        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+//        sceneDelegate.window?.rootViewController = loginVC
     }
     
 
