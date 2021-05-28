@@ -5,6 +5,7 @@ from .serializers import ReadAttendanceSerializer, WriteAttendanceSerializer
 from rest_framework.response import Response
 from rest_framework import status
 
+
 # Create your views here.
 
 
@@ -27,3 +28,31 @@ class AttendancesView(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
+class AttendanceView(APIView):
+    def get_attendance(self, pk):
+        try:
+            attendance = Attendance.objects.get(pk=pk)
+            return attendance
+        except Attendance.DoesNotExist:
+            return None
+
+    def get(self, request, pk):
+        attendance = self.get_attendance(pk)
+        if attendance is not None:
+            serializer = ReadAttendanceSerializer(attendance).data
+            return Response(serializer)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def put(self, request, pk):
+        attendance = self.get_attendance(pk)
+        if attendance is not None:
+            if attendance.user != request.user:
+                return Response(status=status.HTTP_403_FORBIDDEN)
+            serializer = WriteAttendanceSerializer(attendance, data=request.data, partial=True)  # 내가 바꾸고 싶은 데이터만 보낸다
+            if serializer.is_valid():
+                attendance = serializer.save()
+                return Response(ReadAttendanceSerializer(attendance).data)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response()

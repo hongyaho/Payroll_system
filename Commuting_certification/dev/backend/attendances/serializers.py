@@ -20,5 +20,10 @@ class WriteAttendanceSerializer(serializers.Serializer):
     end_gps = serializers.CharField(max_length=255, default="")
 
     def create(self, validated_data):
-        print(validated_data)
         return Attendance.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        instance.end_time = validated_data.get("end_time", instance.end_time)
+        instance.end_gps = validated_data.get("end_gps", instance.end_gps)
+        instance.save()
+        return instance
