@@ -6,8 +6,8 @@ from users.models import User
 class Attendance(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='attendance')
     date = models.DateField(auto_now_add=True)
-    start_time = models.DateTimeField(auto_now_add=True)
-    end_time = models.DateTimeField(auto_now=True)
+    start_time = models.TimeField(auto_now_add=True)
+    end_time = models.TimeField(default="00:00:00")
     start_gps = models.CharField(max_length=255, blank=True, null=True)
     end_gps = models.CharField(max_length=255, blank=True, null=True)
 
