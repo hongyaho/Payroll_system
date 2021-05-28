@@ -8,11 +8,13 @@
 import UIKit
 import CoreLocation
 
-class TakeLocation: UIViewController, CLLocationManagerDelegate {
+class TakeLocation: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
+    var id = ""
     @IBOutlet var latLbl: UILabel!
     @IBOutlet var longLBl: UILabel!
-    @IBOutlet var userImage: UIImageView!
+    @IBOutlet var idLBl: UILabel!
+    
     @IBOutlet var nextBtn: UIButton!
     
     var locationManager: CLLocationManager!
@@ -33,15 +35,19 @@ class TakeLocation: UIViewController, CLLocationManagerDelegate {
         let longitude = coor?.longitude
 
         if let latitude = latitude, let longitude = longitude {
-            latLbl.text = String(latitude)
-            longLBl.text = String(longitude)
+            latLbl.text = String(format:"%.3f", latitude)
+            longLBl.text = String(format:"%.3f", longitude)
         }
+        
+        idLBl.text = id
+        
 
     }
-    @IBAction func clickNext(_ sender: UIButton) {
-        guard let mainVC = self.storyboard?.instantiateViewController(identifier: "MainPage") as? MainPage else {return}
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = mainVC
+    @IBAction func clickLogout(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+//        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+//        sceneDelegate.window?.rootViewController = mainVC
         
     }
     
@@ -53,5 +59,7 @@ class TakeLocation: UIViewController, CLLocationManagerDelegate {
         present(alert, animated: true, completion: nil)
     }
 
+
     
 }
+
