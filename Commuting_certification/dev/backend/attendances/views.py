@@ -18,6 +18,7 @@ class AttendancesView(APIView):
 
     def post(self, request):
         if not request.user.is_authenticated:
+            print(request.user)
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         serializer = WriteAttendanceSerializer(data=request.data)
         print(serializer.is_valid())
