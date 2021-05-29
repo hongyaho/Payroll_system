@@ -12,15 +12,15 @@ class ReadAttendanceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Attendance
-        fields = ("user", "date", "start_time", "end_time", "start_gps", "end_gps")
+        fields = ("user", "date", "start_latitude", "start_longitude", "end_latitude", "end_longitude")
 
 
 class WriteAttendanceSerializer(serializers.Serializer):
     date = serializers.DateField(default="00:00:00")
-    start_time = serializers.TimeField(default="00:00:00")
-    end_time = serializers.TimeField(default="00:00:00")
-    start_gps = serializers.CharField(max_length=255, default="")
-    end_gps = serializers.CharField(max_length=255, default="")
+    start_latitude = serializers.CharField(max_length=255, default="")
+    start_longitude = serializers.CharField(max_length=255, default="")
+    end_latitude = serializers.CharField(max_length=255, default="")
+    end_longitude = serializers.CharField(max_length=255, default="")
 
     def create(self, validated_data):
         return Attendance.objects.create(**validated_data)
