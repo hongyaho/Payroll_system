@@ -4,13 +4,13 @@ from attendances.models import Attendance
 from .serializers import ReadAttendanceSerializer, WriteAttendanceSerializer
 from rest_framework.response import Response
 from rest_framework import status
-
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 
 # Create your views here.
 
-
+@method_decorator(csrf_exempt, name='dispatch')
 class AttendancesView(APIView):
     def get(self, request):
         attendances = Attendance.objects.all()
@@ -18,7 +18,6 @@ class AttendancesView(APIView):
         serializer = ReadAttendanceSerializer(attendances, many=True).data
         return Response(serializer)
 
-    @csrf_protect
     def post(self, request):
         if not request.user.is_authenticated:
             print(request.user)
