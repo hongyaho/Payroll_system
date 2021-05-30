@@ -1,38 +1,27 @@
+var template = require('./template.js');
+
 module.exports = {
-  home:function() {
-    return `
-    <!doctype html>
-    <html>
-    <head>
-      <title>HOME</title>
-      <meta charset="utf-8">
-    </head>
-    <body>
-      <h1><a href="/employeeManagement">직원관리</a></h1>
-      <h1><a href="/commutingInfo">출퇴근관리</a></h1>
-    </body>
-    </html>
-    `
+  inputPage:function() {
+    console.log('ok');
+    return template.addPage();
   },
-  render_dataList:function() {
-    return `
-    <!doctype html>
-    <html>
-    <head>
-      <title>Employee Management</title>
-      <meta charset="utf-8">
-    </head>
-    <body>
-      <form action = "https://localhost:2021/?id=employeeManagement/search" method="post">
-        <input type = "text" name="key" placeholder="id or name">
-        <input type = "submit">
-      </form>
-      <li><a href = "add.html">추가</a><li>
-    </body>
-    </html>
-    `
+  render_dataList:function(data) {
+    if(data) {
+      var i = 0;
+      var text;
+      while(i < data.length) {
+        text += `<tr><td class="tg-76xw">${data[i].id}</td>
+                  <td class="tg-76xw">${data[i].name}</td>
+                  <td class="tg-76xw">${data[i].password}</td>
+                  <td class="tg-76xw">${data[i].phoneNUM}</td>
+                  <td class="tg-76xw">${data[i].working_hours}</td>
+                  <td class="tg-76xw">${data[i].pay}</td></tr>`;
+        i += 1;
+      }
+    }
+    return template.searchPage(text);
   },
-  render_searchData:function(data) {
+  /*render_searchData:function(data) {
     return `
     <!doctype html>
     <html>
@@ -50,7 +39,7 @@ module.exports = {
     </body>
     </html>
     `;
-  },
+  },*/
   warning:function(err_msg) {
     return `
     <!doctype html>
