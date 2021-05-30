@@ -25,9 +25,6 @@ function select_data(sql, callback) {
 
   var data;
   db.query(sql, function(error, rows, fields) {
-    //db.end();
-
-    //conclose.log('db disconnected');
     if (error) throw(error);
 
     checker(rows, (res) => { data = res; } );
@@ -46,13 +43,18 @@ function request_entire(callback) {
 
 // be asked to show the certain data list
 // make SQL command to use in MySql
-function request_search(key) {
-  var sql = 'SELECT * FROM DataList where name = \'' + key + '\' or id = \'' + key + '\'';
+function request_search(key, callback) {
+  var sql = 'SELECT * FROM DataList where name = \'' + key + '\' or id = \'' + key + '\';';
   select_data( sql, (res)=>{ callback(res); } );
 }
 
-function request_add(id, name, password, phoneNUM, working_hours, pay) {
-
+function request_add(id, name, password, phoneNUM, callback) {
+  var sql = `INSERT INTO DataList VALUES (${id},${name},${password},${phoneNUM}, null, null)`;
+  var data;
+  db.query(sql, function(error, rows, fields) {
+    if (error) throw(error);
+  });
+  setTimeout(()=>{ callback(); }, 100);
 }
 
 module.exports = { request_entire,

@@ -11,16 +11,16 @@ module.exports = {
     <center>
     <h1>직원 관리 시스템</h1>
     <div class='s1' align="left">
-      <button type="button" onclick="goBack()""
-      style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;">Go Back</button>
+      <input type = "button" value = "HOME" onclick="location.href = '/employeeManagement'"
+      style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;"/>
     </div>
     <br>
     <div class='s1'>
     	<form method="post">
         <input type="text" name = "key" placeholder="id or name" inform="inform" style="width:450px;height:60px;font-size:30px;"/>
-        <input type = "submit" value = "SEARCH" onclick = "javascript: form.action = 'localhost:2021/employeeManagement/search';"
+        <input type = "submit" value = "SEARCH" onclick = "javascript: form.action = '/employeeManagement_search';"
           style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;"/>
-        <input type = "button" value = "ADD" onclick="location.href ='localhost:2021/employeeManagement/add'"
+        <input type = "button" value = "ADD" onclick="location.href ='/employeeManagement_input'"
       	  style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;"/>
     	</form>
     </div>
@@ -54,7 +54,8 @@ module.exports = {
     </html>
     `;
   },
-  addPage:function() {
+
+  inputPage:function() {
     return `
     <html>
     <head>
@@ -77,14 +78,15 @@ module.exports = {
     <table class="tg">
     <thead>
       <tr>
-        <th class="tg-wpsg">ID<br></th>
-        <th class="tg-wpsg">이름</th>
-        <th class="tg-wpsg">전화번호</th>
-        <th class="tg-wpsg">비밀번호</th>
-        <th class="tg-wpsg">급여</th>
-        <th class="tg-wpsg">급여옵션</th>
+        <th class="tg-wpsg" name = "id">ID<br></th>
+        <th class="tg-wpsg" name = "name">이름</th>
+        <th class="tg-wpsg" name = "phoneNUM">전화번호</th>
+        <th class="tg-wpsg" name = "password">비밀번호</th>
+        <th class="tg-wpsg" name = "pay">급여</th>
+        <th class="tg-wpsg" name = "option">급여옵션</th>
       </tr>
     </thead>
+    <form method = "post">
     <tbody>
       <tr>
         <td class="tg-76xw"><input type="text" size=7></td>
@@ -99,9 +101,12 @@ module.exports = {
     </center>
     <br><br>
     <div class='s1' align="right">
-        <button  style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;">취소</button>  <button
-        style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;">확인</button>
-        </div>
+        <input type = "button" value = "취소" onclick="location.href ='/employeeManagement'"
+          style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;"/>
+        <input type = "button" value = "확인" onclick = "javascript: form.action = '/employeeManagement_add';"
+          style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;"/>
+    </div>
+    </form>
 
 
     </body>
