@@ -134,8 +134,10 @@ AUTH_USER_MODEL = "users.User"
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "config.authentication.JWTAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-        #'rest_framework.authentication.BasicAuthentication',
+        "config.authentication.CsrfExemptSessionAuthentication",
+        # "rest_framework.authentication.SessionAuthentication",
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
+        # 'rest_framework.authentication.BasicAuthentication',
 
     ],
 }
