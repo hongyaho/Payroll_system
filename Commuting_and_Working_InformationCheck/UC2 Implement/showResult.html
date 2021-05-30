@@ -4,19 +4,18 @@
     <title>View history</title>
     <link rel="stylesheet" href="./result.css">
     <meta charset="utf-8">
-    <script src="./main.js"></script>
-    <script src="./data.js"></script>
+    <script src="./Main.js"></script>
 </head>
 
 <body>
-    <h1>Managing Staff System</h1>
+    <h1>Staff Managing System</h1>
     <div id="backButton">
         <button type="button" id="backButton" onclick="location.href='checkLocationMain.html'">
             <img src="./img/back.png" height="60px" width="60px"></button>
     </div>
     <div id="message">
         사원번호 <script>
-            document.write(requirePageInfo("ID1","id"));</script>의 <script>document.write(requirePageInfo("ID1","date"));</script> 출/퇴근 기록입니다.</div>
+            document.write(input.inputID);</script>의 <script>document.write(input.dateInfo);</script> 출/퇴근 기록입니다.</div>
     <div id="historyView">
         <div class="label">사진</div>
         <div></div>
@@ -27,7 +26,7 @@
         <div id="map" width="400px" height="400px"></div>
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfb46183fb2792df18c5a03f5644a6e0">
         </script>
-        <script src="mapapi.js"></script>
+        <script src="./Map.js"></script>
         
         <div></div>
         <div></div>
