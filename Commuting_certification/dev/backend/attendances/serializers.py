@@ -12,7 +12,7 @@ class ReadAttendanceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Attendance
-        fields = ("user", "date", "start_latitude", "start_longitude", "end_latitude", "end_longitude")
+        fields = ("id", "user", "date", "start_latitude", "start_longitude", "end_latitude", "end_longitude")
 
 
 class WriteAttendanceSerializer(serializers.Serializer):
