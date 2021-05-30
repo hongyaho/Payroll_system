@@ -26,7 +26,7 @@ class WriteAttendanceSerializer(serializers.Serializer):
         return Attendance.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        instance.end_time = validated_data.get("end_time", instance.end_time)
-        instance.end_gps = validated_data.get("end_gps", instance.end_gps)
+        instance.end_latitude = validated_data.get("end_latitude", instance.end_latitude)
+        instance.end_longitude = validated_data.get("end_longitude", instance.end_longitude)
         instance.save()
         return instance
