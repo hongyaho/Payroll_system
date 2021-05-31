@@ -10,7 +10,7 @@ import CoreLocation
 import Firebase
 import Alamofire
 
-class Main: UIViewController, CLLocationManagerDelegate{
+class Main: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var id = ""
     var lat = ""
@@ -20,10 +20,18 @@ class Main: UIViewController, CLLocationManagerDelegate{
     @IBOutlet var idLBl: UILabel!
     
     @IBOutlet var nextBtn: UIButton!
+    let camera = UIImagePickerController()
     
     var locationManager: CLLocationManager!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 카메라 관련
+        camera.allowsEditing = false
+        camera.sourceType = .camera
+        camera.cameraDevice = .rear
+        camera.cameraCaptureMode = .photo
+        camera.delegate = self
         
         latLbl.text = lat
         longLBl.text = long
@@ -49,17 +57,17 @@ class Main: UIViewController, CLLocationManagerDelegate{
         idLBl.text = id
         
     }
+    
     @IBAction func clickLogout(_ sender: UIButton) {
         
-        // ** Firebase 코드
-//        let firebaseAuth = Auth.auth()
-//        do {
-//            try firebaseAuth.signOut()
-//        } catch let signOutError as NSError {
-//            print ("Error signing out: %@", signOutError)
-//        }
-        
-        // 퇴근인증
+        self.present(self.camera, animated: true) {
+            self.leaveAuth()
+        }
+
+    }
+    
+
+    func leaveAuth() {
         let URL = "http://3.36.39.242/api/v1/attendances/1/"
         let header: HTTPHeaders = [
             "Authorization" : "Bearer " + ad.token]
@@ -70,7 +78,6 @@ class Main: UIViewController, CLLocationManagerDelegate{
         ]
         
         let alamo = AF.request(URL, method: .put, parameters: PARAM, headers: header).validate(statusCode: 200..<300)
-        
         
         alamo.responseString(emptyResponseCodes: [200,204,205]) { response in
             print(PARAM)
@@ -95,11 +102,7 @@ class Main: UIViewController, CLLocationManagerDelegate{
         
         
         self.navigationController?.popToRootViewController(animated: true)
-        
-        
     }
-    
-
 
 }
 
