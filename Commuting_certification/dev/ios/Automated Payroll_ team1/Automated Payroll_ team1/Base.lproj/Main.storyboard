@@ -27,9 +27,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yub-Xy-b7Q">
-                                <rect key="frame" x="70" y="284" width="235" height="34"/>
+                                <rect key="frame" x="70" y="264" width="235" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKz-t3-1O8">
                                 <rect key="frame" x="110" y="532" width="155" height="45"/>
@@ -39,17 +39,17 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ouk-1o-PYD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="submit">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vi0-SA-ztL"/>
+                                    <action selector="clickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vi0-SA-ztL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTv-E2-RQ6">
-                                <rect key="frame" x="70" y="353" width="235" height="34"/>
+                                <rect key="frame" x="70" y="333" width="235" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,7 +60,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GKz-t3-1O8" secondAttribute="bottom" constant="90" id="CCB-DP-dnV"/>
                             <constraint firstItem="yub-Xy-b7Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="Eog-HQ-73K"/>
                             <constraint firstItem="s2p-Yx-mza" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="G1T-jL-hOW"/>
-                            <constraint firstItem="yub-Xy-b7Q" firstAttribute="top" secondItem="s2p-Yx-mza" secondAttribute="bottom" constant="60" id="TUW-O7-LhH"/>
+                            <constraint firstItem="yub-Xy-b7Q" firstAttribute="top" secondItem="s2p-Yx-mza" secondAttribute="bottom" constant="40" id="TUW-O7-LhH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTv-E2-RQ6" secondAttribute="trailing" constant="70" id="WEi-3R-AzE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yub-Xy-b7Q" secondAttribute="trailing" constant="70" id="fIG-Lb-gHP"/>
                             <constraint firstItem="yub-Xy-b7Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hBS-z3-gpg"/>
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="70"/>
+            <point key="canvasLocation" x="992.79999999999995" y="69.715142428785612"/>
         </scene>
         <!--Take Photo-->
         <scene sceneID="RCU-aG-JeG">
@@ -122,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj7-Ji-bH1">
-                                <rect key="frame" x="200" y="113" width="18" height="30"/>
+                                <rect key="frame" x="140" y="113" width="18" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HIe-c2-lOl"/>
                                 </constraints>
@@ -139,7 +139,7 @@
                             <constraint firstItem="3e4-3j-omD" firstAttribute="top" secondItem="HRo-mG-qBX" secondAttribute="bottom" constant="30" id="FmP-Jv-fb0"/>
                             <constraint firstItem="KXV-hD-xry" firstAttribute="trailing" secondItem="GZ0-bn-JfX" secondAttribute="trailing" constant="20" id="ISq-84-vxq"/>
                             <constraint firstItem="tj7-Ji-bH1" firstAttribute="top" secondItem="HRo-mG-qBX" secondAttribute="bottom" constant="30" id="IyA-eb-nFG"/>
-                            <constraint firstItem="tj7-Ji-bH1" firstAttribute="leading" secondItem="3e4-3j-omD" secondAttribute="trailing" constant="80" id="KzT-qb-Lo3"/>
+                            <constraint firstItem="tj7-Ji-bH1" firstAttribute="leading" secondItem="3e4-3j-omD" secondAttribute="trailing" constant="20" id="KzT-qb-Lo3"/>
                             <constraint firstItem="GZ0-bn-JfX" firstAttribute="top" secondItem="3e4-3j-omD" secondAttribute="bottom" constant="20" id="SrG-RG-G8e"/>
                             <constraint firstItem="HRo-mG-qBX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="KXV-hD-xry" secondAttribute="leading" constant="90" id="ZTT-fz-12O"/>
                             <constraint firstItem="Dhc-Up-629" firstAttribute="leading" secondItem="KXV-hD-xry" secondAttribute="leading" constant="90" id="hDw-OI-fyx"/>
@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="1816.8" y="68.815592203898049"/>
         </scene>
-        <!--Take Location-->
+        <!--Main-->
         <scene sceneID="JLx-3p-px9">
             <objects>
-                <viewController storyboardIdentifier="TakeLocation" id="L7i-7g-9WO" customClass="TakeLocation" customModule="Automated_Payroll__team1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="L7i-7g-9WO" customClass="Main" customModule="Automated_Payroll__team1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0u-Ag-uER">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
