@@ -48,9 +48,9 @@ function request_search(key, callback) {
   select_data( sql, (res)=>{ callback(res); } );
 }
 
-function request_add(id, name, password, phoneNUM, callback) {
-  var sql = `INSERT INTO DataList VALUES (${id},${name},${password},${phoneNUM}, null, null)`;
-  var data;
+function request_add(id, name, password, phoneNUM, pay_op_type, pay_op_amount, callback) {
+  var sql = `INSERT INTO DataList (id, name, password, phoneNUM, pay_op_type, pay_op_amount) VALUES (${id}, '${name}', '${password}', '${phoneNUM}', ${pay_op_type}, ${pay_op_amount})`;
+  console.log(sql);
   db.query(sql, function(error, rows, fields) {
     if (error) throw(error);
   });
