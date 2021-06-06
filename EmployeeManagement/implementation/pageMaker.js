@@ -13,7 +13,8 @@ module.exports = {
                 <!--th class="tg-wpsg" name = "pay">급여</th-->
                 <th class="tg-wpsg" name = "option">급여옵션</th>
               </tr>`;
-    var td = `<tr>
+    var td = `<form method = "post">
+              <tr>
                 <td class="tg-76xw"><br><input type="text" name="id" size=7></td>
                 <td class="tg-76xw"><br><input type="text" name="name" size=7></td>
                 <td class="tg-76xw"><br><input type="text" name="phoneNUM" size=7></td>
@@ -24,7 +25,6 @@ module.exports = {
               </tr>`;
     return template.HTML('직원 추가', err_msg, th, td,
                           `<br><br>
-                          <form method = "post">
                           <div class='s1' align="right">
                               <input type = "button" value = "취소" onclick="location.href ='/employeeManagement'"
                                 style="font-size: 1.5em; background-color: rgb(180, 180, 180); padding: 10px 40px 10px 40px;"/>

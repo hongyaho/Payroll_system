@@ -13,10 +13,6 @@ var app = http.createServer(function(request,response){
   var queryData = url.parse(_url, true).query;
   var pathname = url.parse(_url, true).pathname;
 
-  console.log('p:' + pathname);
-  console.log(queryData);
-  console.log('u:' + _url);
-
   var authority = login_checker.isAuthorized();
   if (authority != true) {
     response.writeHead(404);
@@ -90,7 +86,7 @@ var app = http.createServer(function(request,response){
     }
 
     // add process
-    else if (pathname = '/employeeManagement_add') {
+    else if (pathname == '/employeeManagement_add') {
       var body = '';
       request.on('data', function(data) {
         body += data;
@@ -108,7 +104,7 @@ var app = http.createServer(function(request,response){
         if (id && name && password && phoneNUM && pay_op_type && pay_op_amount) {
           connectDB.request_search(id, (data) => {
             // make sure there is already the same id
-            if (data.length == 0) {
+            if (data == undefined) {
               connectDB.request_add(id, name, password, phoneNUM, pay_op_type, pay_op_amount, () => {
                 response.writeHead(302, {Location: '/employeeManagement'});
                 response.end();
